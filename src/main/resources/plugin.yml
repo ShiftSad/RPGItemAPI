@@ -1,0 +1,7 @@
+name: SadevRPG
+version: '${version}'
+main: me.sadev.rpg.MainRPG
+api-version: 1.18
+depend: [ ItemsAdder ]
+authors: [ Sadness ]
+description: Armas custimizadas com o uso do ItemsAdder
