@@ -10,9 +10,11 @@ public class AspectOfTheEnd extends MagicSword {
 
     @Override
     public boolean itemAbillity(Player player) {
-        Block b = player.getTargetBlock(null, 8);
-        player.teleport(new Location(b.getWorld(), b.getX(), b.getY(), b.getZ(), player.getLocation().getYaw(), player.getLocation().getPitch()));
-        player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0F, 1.0F);
+        try {
+            Block b = player.getTargetBlock(null, 8);
+            player.teleport(new Location(b.getWorld(), b.getX(), b.getY(), b.getZ(), player.getLocation().getYaw(), player.getLocation().getPitch()));
+            player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0F, 1.0F);
+        } catch (Exception ignore) {}
 
         return true;
     }
@@ -34,7 +36,7 @@ public class AspectOfTheEnd extends MagicSword {
 
     @Override
     public int cooldown() {
-        return 10;
+        return 1;
     }
 
     @Override
